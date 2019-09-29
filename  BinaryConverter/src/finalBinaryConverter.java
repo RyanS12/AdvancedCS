@@ -1,6 +1,7 @@
 import java.io.File;
+
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+
 public class finalBinaryConverter {    
 	public static final int MAX_BITS = 64;    
 	public static final int LONG = 64;  
@@ -20,7 +21,7 @@ public class finalBinaryConverter {
 		
 		
 		try {          
-			s = new Scanner(new File("text.txt"));          
+			s = new Scanner(new File("classTestFileFinal.txt"));          
 			//System.out.println("It's open");          
 			allGood = true;   
 			
@@ -191,7 +192,7 @@ public class finalBinaryConverter {
 				
 				if((long)(Math.pow(2.0, (double)i)) <= num) {
 						
-					num -= Math.pow(2.0, (double)i);
+					num -= (long)Math.pow(2.0, (double)i);
 					binString = binString + "1";
 						
 				} else {
@@ -341,7 +342,7 @@ String binString = "";
 			}
 			
 			
-			String sciNot = binString + "e" + Integer.toString(oldPointLoc - newPointLoc);
+			//String sciNot = binString + "e" + Integer.toString(oldPointLoc - newPointLoc);
 			
 			//scientific notation part
 			
