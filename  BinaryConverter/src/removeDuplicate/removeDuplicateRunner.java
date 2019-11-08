@@ -18,22 +18,26 @@ public class removeDuplicateRunner {
 		l.add("Kartik");
 		l.add("Sarah");
 		
-		removeDuplicates(l);
 		
-		System.out.println(l);
+		
+		System.out.println(removeDuplicates(l));
 		
 		
 	}
 	
-	public static void removeDuplicates(ArrayList<String> list) {
-		for(int i = 0;i < list.size(); i++) {
-			for(int j = 0; j < list.size(); j++) {
-				if(i!=j && list.get(i) == list.get(j)) {
-					list.remove(j);
-				}
+	public static ArrayList<String> removeDuplicates(ArrayList<String> list) {
+		ArrayList<String> happenedOnce = new ArrayList<String>();
+		for(int i = 0; i < list.size(); i++) {
+			
+			if(!happenedOnce.contains(list.get(i))) {
+				happenedOnce.add(list.get(i));
 			}
 			
 		}
+		
+		return happenedOnce;
+		
+		//System.out.println(happenedOnce);
 	}
 
 }
