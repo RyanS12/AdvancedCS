@@ -8,10 +8,6 @@ public class Triangle extends Polygon{
 	
 	public static final int NUMOFSIDES = 3;
 	
-	public Triangle() {
-		super();
-	}
-	
 	public Triangle(ArrayList<Point> coors) {
 		super(NUMOFSIDES, coors);
 		
