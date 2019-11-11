@@ -2,6 +2,8 @@ package harryPotterReader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class WordCounter {
@@ -11,11 +13,12 @@ public class WordCounter {
 		
 		File text = new File("harry_potter.txt");
 		
-		UniqueWord uList = new UniqueWord(text);
+		//UniqueWord uList = new UniqueWord(text);
 		
+		System.setOut(new PrintStream(new FileOutputStream("text.txt")));
+		System.out.println("This is test output");
 		
-		
-		
+		System.out.println(new UniqueWord(text));
 		
 		
 		

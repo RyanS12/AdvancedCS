@@ -28,15 +28,30 @@ public class UniqueWord {
 				if(newWord.charAt(0) == '\"' 
 						|| newWord.charAt(0) == '(') {
 					newWord = newWord.substring(1); // remove first letter if punctuation
-				} else if (newWord.charAt(newWord.length()-1) == '.' 
+				} 
+				
+				else if (newWord.charAt(newWord.length()-1) == '.' 
 						|| newWord.charAt(newWord.length()-1) == ','
 						|| newWord.charAt(newWord.length()-1) == '?'
 						|| newWord.charAt(newWord.length()-1) == '!'
 						|| newWord.charAt(newWord.length()-1) == '\"'
-						|| newWord.charAt(newWord.length()-1) == ')') {
+						|| newWord.charAt(newWord.length()-1) == ')'
+						|| newWord.charAt(newWord.length()-1) == ';') {
 					
 					newWord = newWord.substring(0,newWord.length() - 1); // remove last letter if punctuation
 				}
+				
+				/*if(newWord.charAt(newWord.length()-1) == '.' 
+						|| newWord.charAt(newWord.length()-1) == ','
+						|| newWord.charAt(newWord.length()-1) == '?'
+						|| newWord.charAt(newWord.length()-1) == '!'
+						|| newWord.charAt(newWord.length()-1) == '\"'
+						|| newWord.charAt(newWord.length()-1) == ')'
+						|| newWord.charAt(newWord.length()-1) == ';') {
+					
+					newWord = newWord.substring(0, newWord.length() - 1);
+					
+				}*/
 				
 				if(!uniqueList.contains(newWord)){
 					
