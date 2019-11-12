@@ -20,13 +20,9 @@ public class WordCounter {
 		
 		System.out.println(new UniqueWord(text));
 		
-		
-		
-		
-		
 	}
 	
-	public static void readFile() {
+	/*public static void readFile() {
 		try {
 			
 			Scanner s = new Scanner(new File("harry_potter.txt"));
@@ -38,11 +34,10 @@ public class WordCounter {
 			}
 			s.close();
 			
-			
 		} catch (Exception FileNotFoundException) {
 			
 			System.out.println("problem opening file");
 			
 		}
-	}
+	}*/
 }

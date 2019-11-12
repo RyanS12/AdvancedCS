@@ -18,8 +18,6 @@ public class UniqueWord {
 			Scanner s = new Scanner(f);
 			System.out.println("file open");
 			
-			
-			
 			while(s.hasNext()) {
 				
 				String newWord = stripCharacters(s.next().toLowerCase());
@@ -32,11 +30,8 @@ public class UniqueWord {
 				} else {
 					int indexToAdd = uniqueList.indexOf(newWord);
 					
-					count.add(indexToAdd, count.get(indexToAdd) + 1);
-					count.remove(indexToAdd + 1);
+					count.set(indexToAdd, count.get(indexToAdd) + 1);
 					
-					//count.remove(count.get(indexToAdd));
-					//count.add(indexToAdd, count.get(indexToAdd) + 1);
 					
 				}
 				
@@ -45,18 +40,10 @@ public class UniqueWord {
 			for(int i = 0; i < uniqueList.size(); i++) {
 				System.out.println(uniqueList.get(i) + " : " + count.get(i));
 			}
-			
-			
+	
 		} catch (Exception FileNotFoundException) {
 			System.out.println("problem opening file");
-		}
-		
-		
-		
-	}
-	
-	public ArrayList<String> getUList() {
-		return uniqueList;
+		}	
 	}
 	
 	public String stripCharacters(String s) {
@@ -65,6 +52,5 @@ public class UniqueWord {
 		s = s.replaceAll("[^a-zA-Z ]", "");
 		
 		return s;
-		
 	}
 }
