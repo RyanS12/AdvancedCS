@@ -19,39 +19,10 @@ public class UniqueWord {
 			System.out.println("file open");
 			
 			
-			//System.out.println(s.next().toLowerCase());
 			
 			while(s.hasNext()) {
 				
-				String newWord = s.next().toLowerCase();
-				
-				if(newWord.charAt(0) == '\"' 
-						|| newWord.charAt(0) == '(') {
-					newWord = newWord.substring(1); // remove first letter if punctuation
-				} 
-				
-				else if (newWord.charAt(newWord.length()-1) == '.' 
-						|| newWord.charAt(newWord.length()-1) == ','
-						|| newWord.charAt(newWord.length()-1) == '?'
-						|| newWord.charAt(newWord.length()-1) == '!'
-						|| newWord.charAt(newWord.length()-1) == '\"'
-						|| newWord.charAt(newWord.length()-1) == ')'
-						|| newWord.charAt(newWord.length()-1) == ';') {
-					
-					newWord = newWord.substring(0,newWord.length() - 1); // remove last letter if punctuation
-				}
-				
-				/*if(newWord.charAt(newWord.length()-1) == '.' 
-						|| newWord.charAt(newWord.length()-1) == ','
-						|| newWord.charAt(newWord.length()-1) == '?'
-						|| newWord.charAt(newWord.length()-1) == '!'
-						|| newWord.charAt(newWord.length()-1) == '\"'
-						|| newWord.charAt(newWord.length()-1) == ')'
-						|| newWord.charAt(newWord.length()-1) == ';') {
-					
-					newWord = newWord.substring(0, newWord.length() - 1);
-					
-				}*/
+				String newWord = stripCharacters(s.next().toLowerCase());
 				
 				if(!uniqueList.contains(newWord)){
 					
@@ -86,5 +57,14 @@ public class UniqueWord {
 	
 	public ArrayList<String> getUList() {
 		return uniqueList;
+	}
+	
+	public String stripCharacters(String s) {
+		
+		s = s.trim();
+		s = s.replaceAll("[^a-zA-Z ]", "");
+		
+		return s;
+		
 	}
 }
