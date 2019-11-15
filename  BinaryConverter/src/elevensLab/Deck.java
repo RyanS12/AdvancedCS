@@ -12,7 +12,7 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private List<Card> cards;
+	private ArrayList<Card> cards = new ArrayList<Card>();
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -40,6 +40,7 @@ public class Deck {
 		}
 		
 		size = cards.size();
+		shuffle();
 	}
 
 
@@ -49,7 +50,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return cards.isEmpty();
+		return cards.size() == 0;
 	}
 
 	/**
@@ -67,6 +68,17 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for(int k = cards.size() - 1; k >=0; k--) {
+			int r = (int)(Math.random() * cards.size());
+			
+			Card temp = cards.get(r);
+			cards.set(r, cards.get(k));
+			cards.set(k, temp);
+		}
+		
+		size = cards.size();
+		
+		//return values;
 		
 	}
 
@@ -77,7 +89,7 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if(cards.isEmpty()) {
+		if(cards.size() == 0) {
 			return null;
 		}
 		size--;
