@@ -20,22 +20,25 @@ public class removeDuplicateRunner {
 		
 		
 		
-		System.out.println(removeDuplicates(l));
+		removeDuplicates(l);
+		
+		System.out.println(l);
 		
 		
 	}
 	
-	public static ArrayList<String> removeDuplicates(ArrayList<String> list) {
+	public static void removeDuplicates(ArrayList<String> list) {
 		ArrayList<String> happenedOnce = new ArrayList<String>();
 		for(int i = 0; i < list.size(); i++) {
 			
 			if(!happenedOnce.contains(list.get(i))) {
 				happenedOnce.add(list.get(i));
+			} else {
+				list.remove(i);
+				i--;
 			}
 			
 		}
-		
-		return happenedOnce;
 		
 		//System.out.println(happenedOnce);
 	}

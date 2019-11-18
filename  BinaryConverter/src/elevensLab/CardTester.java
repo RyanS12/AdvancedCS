@@ -8,7 +8,7 @@ public class CardTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		
+		/*
 		Card card1 = new Card("1", "Spades", 1);
 		Card card2 = new Card("2", "Heart", 2);
 		Card card3 = new Card("3", "Diamonds", 3);
@@ -32,7 +32,7 @@ public class CardTester {
 		System.out.println(card3.getPointValue());
 		System.out.println(card3.getRank());
 		System.out.println(card3.getSuit());
-		
+		*/
 		
 		
 	}
